@@ -15,8 +15,6 @@ public:
 private:
 	ObjectContainer* objController[FACTSIZE];
 	int hash(char ch);
-
-
 };
 
 #endif

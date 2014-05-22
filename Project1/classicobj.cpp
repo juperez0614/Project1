@@ -60,7 +60,7 @@ bool ClassicObj::operator<(const Object &rhs) const{
 	}
 }
 
-Object* ClassicObj::create(){
+Object* ClassicObj::create() const{
 	return new ClassicObj();
 }
 
