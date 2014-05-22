@@ -13,8 +13,8 @@ ObjectController::ObjectController(){
 ObjectController::~ObjectController(){
 	for (int i = 0; i < FACTSIZE; i++){
 		delete objController[i];
+		objController[i] = NULL;
 	}
-	delete[] objController;
 }
 
 bool ObjectController::insertIt(char ch, Object* toInsert){

@@ -9,8 +9,9 @@ Factory::Factory(){
 Factory::~Factory(){
 	for (int i = 0; i < FACTSIZE; i++){
 		delete objFactory[i];
+		objFactory[i] = NULL;
 	}
-	delete objFactory;
+
 }
 
 int Factory::hash(char ch){

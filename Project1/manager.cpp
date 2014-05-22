@@ -10,7 +10,7 @@ character of the line and send the command to the appropriate container.
 void Manager::intakeDataFromFile(ifstream & intakeFile){
 	char movieCode;
 	intakeFile >> movieCode;
-	emptyObject =  objFactory.createIt(movieCode);
+	emptyObject =  objFactory.createIt(movieCode); //new Obj
 	emptyObject->setData(intakeFile);
 	containerArray.insertIt(movieCode, emptyObject);
 	emptyObject = NULL;

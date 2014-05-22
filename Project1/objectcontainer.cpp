@@ -12,8 +12,10 @@ bool ObjectContainer::insert( Object* toInsert){
 bool ObjectContainer::insert(containerNode* current, Object* toInsert){
 	if (current == NULL){
 		containerNode* toAdd = new containerNode();
-		toAdd->data = new Object();
+		toAdd->data = toInsert;
 		current = toAdd;
+		toInsert = NULL;
+		toAdd = NULL;
 		return true; 
 	}
 	else {
