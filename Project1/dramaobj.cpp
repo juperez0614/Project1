@@ -40,7 +40,7 @@ bool DramaObj::operator<(const Object & rhs) const{
 }
 
 
-Object* DramaObj::create(){
+Object* DramaObj::create()const {
 	return new DramaObj();
 }
 

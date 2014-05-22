@@ -9,7 +9,7 @@ character of the line and send the command to the appropriate container.
 
 #include <iostream>
 #include <fstream>
-#include "objectcontainer.h"
+#include "objectcontroller.h"
 #include "factory.h"
 
 
@@ -28,8 +28,8 @@ public:
 
 protected:
 	Object* emptyObject;
-	ObjectContainer* containerArray [(USER_TYPES + GENRE_TYPES) * 2 + 1];
-	Factory* objFactory;
+	ObjectController containerArray;
+	Factory objFactory;
 };
 
 #endif

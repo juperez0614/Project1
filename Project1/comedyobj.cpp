@@ -39,7 +39,7 @@ bool ComedyObj::operator<(const Object & rhs)const {
 	}
 }
 
-Object* ComedyObj::create(){
+Object* ComedyObj::create()const {
 	return new ComedyObj();
 }
 
