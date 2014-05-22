@@ -54,6 +54,9 @@
     <ClInclude Include="factory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="classicobjcontainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="manager.cpp">
@@ -87,6 +90,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="objectcontainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="classicobjcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

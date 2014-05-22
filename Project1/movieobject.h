@@ -20,6 +20,7 @@ public:
 	MovieObject();
 	MovieObject(string, int, string);
 	//virtual void setData(ifstream & inputsGetLine);
+	virtual ~MovieObject();
 	virtual Object* create() const = 0;
 	virtual void setData(ifstream & intake) = 0;
 	virtual bool operator<(const Object & rhs)const = 0;

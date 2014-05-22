@@ -2,7 +2,7 @@
 
 DramaObj::DramaObj() : MovieObject(){}
 
-DramaObj::DramaObj(string dirName, string titleName) : MovieObject(dirName, 2000, titleName){}
+DramaObj::DramaObj(string dirName, string titleName) : MovieObject(titleName, 2000, dirName){}
 
 DramaObj::~DramaObj(){
 	title = "";
@@ -54,5 +54,11 @@ void DramaObj::setData(ifstream& intake){
 	intake >> year;
 }
 
+ostream& operator<<(ostream& output, const DramaObj& toWrite){
+	output << toWrite.quantity << "\t" << 10 - toWrite.quantity << "\t"
+		<< toWrite.title << "\t" << "\t" << toWrite.director << "\t" << toWrite.year
+		<< endl;
+	return output;
 
+}
 

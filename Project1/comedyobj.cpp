@@ -52,3 +52,11 @@ void ComedyObj::setData(ifstream& intake){
 
 	intake >> year;
 }
+
+ostream& operator<<(ostream& output, const ComedyObj& toWrite){
+	output << toWrite.quantity << "\t" << 10 - toWrite.quantity << "\t"
+		<< toWrite.title << "\t" << "\t" << toWrite.director << "\t" << toWrite.year
+			 << endl;
+	return output;
+
+}

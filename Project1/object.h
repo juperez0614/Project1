@@ -13,7 +13,7 @@ class Object{
 
 public:
 	Object();
-	//virtual ~Object();
+	virtual ~Object();
 	virtual Object* create() const = 0;
 	virtual void setData(ifstream & intake) = 0;
 	virtual bool operator<(const Object & rhs)const = 0;

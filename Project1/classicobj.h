@@ -4,6 +4,7 @@
 
 
 class ClassicObj : public MovieObject {
+	friend ostream& operator<<(ostream& output, const ClassicObj& toWrite);
 public:
 	ClassicObj();
 	ClassicObj(string, string, int, int);

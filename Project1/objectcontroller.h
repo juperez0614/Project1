@@ -11,6 +11,7 @@ public:
 	ObjectController();
 	~ObjectController();
 	bool insertIt(char ch, Object* toInsert);
+	void print(ostream & output);
 
 private:
 	ObjectContainer* objController[FACTSIZE];

@@ -4,6 +4,7 @@
 
 
 class DramaObj : public MovieObject {
+	friend ostream& operator<<(ostream& output, const DramaObj& toWrite);
 public:
 	DramaObj();
 	DramaObj(string, string);

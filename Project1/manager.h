@@ -21,7 +21,9 @@ class Manager {
 	static const int GENRE_TYPES = 3;
 
 public:
-
+	~Manager();
+	void print(ostream & output);
+	void printContainer(ostream &, ObjectController &);
 	void intakeDataFromFile(ifstream & inputfile);
 	//bool borrowDVD(ifstream input);
 	//bool returnDVD(string dvdName, string custFullName);

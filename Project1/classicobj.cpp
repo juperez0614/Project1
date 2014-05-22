@@ -75,3 +75,12 @@ void ClassicObj::setData(ifstream & intake){
 	intake >> actorFirst >> actorLast;  // input star's name
 	intake >> month >> year;            // input month and year
 }
+
+ostream& operator<<(ostream& output, const ClassicObj& toWrite){
+	output << toWrite.quantity << "\t" << (10 - toWrite.quantity) << "\t" 
+		<< toWrite.title << "\t" << "\t" << toWrite.director << "\t" << toWrite.year 
+		<< "\t" << toWrite.month << "\t" << toWrite.actorFirst 
+		<< " " << toWrite.actorLast << endl;
+	return output;  
+	
+}

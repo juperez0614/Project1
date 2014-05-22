@@ -13,11 +13,14 @@ genre. Each tree is sorted by the MovieObject's definition of < and ==.
 
 class MovieObjectContainer : public ObjectContainer{
 public:
-	
+	MovieObjectContainer();
+	//MovieObjectContainer(const MovieObjectContainer& current);
+	virtual void print(ostream & output) = 0;
+	virtual ~MovieObjectContainer();
 	bool search(Object* toFind);
 
 protected:
-
+	ObjectContainer::containerNode* copyHelper(const containerNode* current);
 
 };
 

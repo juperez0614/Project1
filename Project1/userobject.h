@@ -17,6 +17,8 @@ class UserObject : public Object{
 	friend ifstream & operator>>(ifstream& input, UserObject& toWrite);
 
 public:
+	UserObject();
+	virtual ~UserObject();
 	virtual void setData(ifstream & inputsGetLine);
 	bool operator<(const UserObject & rhs)const;
 	bool operator==(const UserObject & rhs)const;

@@ -14,7 +14,24 @@ void Manager::intakeDataFromFile(ifstream & intakeFile){
 	emptyObject->setData(intakeFile);
 	containerArray.insertIt(movieCode, emptyObject);
 	emptyObject = NULL;
+	if (!intakeFile.eof()){
+		intakeDataFromFile(intakeFile);
+	}
 }
 
+Manager::~Manager(){
+	delete emptyObject;
+	emptyObject = NULL;
+	//other two attributes delete on their own
+}
+
+
+void Manager::printContainer(ostream & output, ObjectController & toPrint){
+	toPrint.print(output);
+}
+
+void Manager::print(ostream & output){
+	printContainer(output, containerArray);
+}
 
 	//peek and get line are from ifstream class itself

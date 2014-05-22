@@ -1,7 +1,7 @@
 #include "movieobject.h"
 
 MovieObject::MovieObject():Object(){
-	
+	quantity = 10;
 }
 
 MovieObject::MovieObject(string movieTitle, int yr, string dir):Object(){
@@ -9,4 +9,11 @@ MovieObject::MovieObject(string movieTitle, int yr, string dir):Object(){
 	year = yr;
 	director = dir;
 	quantity = 10;
+}
+
+MovieObject::~MovieObject(){
+	title = "";
+	year = 0;
+	director = "";
+	quantity = 0;
 }

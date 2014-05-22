@@ -13,6 +13,7 @@ sorted by the UserObject's definition of < and ==.
 class UserObjectContainer{
 public:
 
+	virtual ~UserObjectContainer();
 	UserObject* search();
 	bool insertUser(UserObject & toInsert);
 

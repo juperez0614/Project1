@@ -4,6 +4,7 @@
 
 
 class ComedyObj : public MovieObject {
+	friend ostream& operator<<(ostream& output, const ComedyObj& toWrite);
 public:
 	ComedyObj();
 	ComedyObj(string, int);

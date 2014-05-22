@@ -70,6 +70,7 @@
     <ClInclude Include="customerobj.h" />
     <ClInclude Include="dramaobj.h" />
     <ClInclude Include="factory.h" />
+    <ClInclude Include="classicobjcontainer.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="movieobject.h" />
     <ClInclude Include="movieobjectcontainer.h" />
@@ -81,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="classicobj.cpp" />
+    <ClCompile Include="classicobjcontainer.cpp" />
     <ClCompile Include="comedyobj.cpp" />
     <ClCompile Include="dramaobj.cpp" />
     <ClCompile Include="factory.cpp" />

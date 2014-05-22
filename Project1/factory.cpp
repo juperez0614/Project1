@@ -1,4 +1,4 @@
-#include "factory.h";
+#include "factory.h"
 
 Factory::Factory(){
 	objFactory[0] = new ClassicObj();
