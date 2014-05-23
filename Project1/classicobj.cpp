@@ -78,7 +78,7 @@ void ClassicObj::setData(ifstream & intake){
 
 ostream& operator<<(ostream& output, const ClassicObj& toWrite){
 	output << toWrite.quantity << "\t" << (10 - toWrite.quantity) << "\t" 
-		<< toWrite.title << "\t" << "\t" << toWrite.director << "\t" << toWrite.year 
+		<< toWrite.title << "\t" << toWrite.director << "\t" << toWrite.year 
 		<< "\t" << toWrite.month << "\t" << toWrite.actorFirst 
 		<< " " << toWrite.actorLast << endl;
 	return output;  

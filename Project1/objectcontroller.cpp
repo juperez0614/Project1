@@ -28,5 +28,6 @@ int ObjectController::hash(char ch){
 }
 
 void ObjectController::print(ostream & output){
+	for (int i = 0;  )
 	objController[0]->print(output);
 }

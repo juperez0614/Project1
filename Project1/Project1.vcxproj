@@ -69,8 +69,10 @@
     <ClInclude Include="comedyobj.h" />
     <ClInclude Include="customerobj.h" />
     <ClInclude Include="dramaobj.h" />
+    <ClInclude Include="dramaobjcontainer.h" />
     <ClInclude Include="factory.h" />
     <ClInclude Include="classicobjcontainer.h" />
+    <ClInclude Include="comedyobjcontainer.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="movieobject.h" />
     <ClInclude Include="movieobjectcontainer.h" />
@@ -84,7 +86,9 @@
     <ClCompile Include="classicobj.cpp" />
     <ClCompile Include="classicobjcontainer.cpp" />
     <ClCompile Include="comedyobj.cpp" />
+    <ClCompile Include="comedyobjcontainer.cpp" />
     <ClCompile Include="dramaobj.cpp" />
+    <ClCompile Include="dramaobjcontainer.cpp" />
     <ClCompile Include="factory.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="movieobject.cpp" />

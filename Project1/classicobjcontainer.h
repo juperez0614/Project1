@@ -7,11 +7,10 @@ class ClassicObjContainer : public MovieObjectContainer {
 
 public:
 	ClassicObjContainer();
-	//ClassicObjContainer(const ClassicObjContainer& current);
 	virtual void print(ostream & output);
 
 protected:
-	ostream& outputHelper(ostream& output, containerNode* toWrite);
+	ostream& outputHelper(ostream& output,const containerNode* toWrite);
 	ObjectContainer::containerNode* copyHelper(const containerNode* current);
 };
 

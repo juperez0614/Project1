@@ -24,7 +24,7 @@ ClassicObjContainer::ClassicObjContainer() : MovieObjectContainer(){}
 //
 //}
 
-ostream& ClassicObjContainer::outputHelper(ostream& output, containerNode * toWrite){
+ostream& ClassicObjContainer::outputHelper(ostream& output,const containerNode * toWrite){
 	if (toWrite->left != NULL){
 		outputHelper(output, toWrite->left);
 	}
@@ -38,17 +38,20 @@ ostream& ClassicObjContainer::outputHelper(ostream& output, containerNode * toWr
 }
 
 
-ostream& operator<<(ostream& output, const ClassicObjContainer& toWrite){
-	output << "*IN*" << "\t" << "*OUT*" << endl;
-	output << "DVD" << "\t" << "DVD" << "\t" << "TITLE" << "\t" << "DIRECTOR" 
-			<< "\t" << "YEAR" << "\t" << "MO" << "\t" << "ACTOR" << endl;
-	ObjectContainer::containerNode *p = toWrite.root;
-	ClassicObjContainer temp(toWrite);
-	temp.outputHelper(output, temp.root);
-	return output;
-}
+//ostream& operator<<(ostream& output, const ClassicObjContainer& toWrite){
+//	output << "*IN*" << "\t" << "*OUT*" << endl;
+//	output << "DVD" << "\t" << "DVD" << "\t" << "TITLE" << "\t" << "DIRECTOR" 
+//			<< "\t" << "YEAR" << "\t" << "MO" << "\t" << "ACTOR" << endl;
+//	ObjectContainer::containerNode *p = toWrite.root;
+//	ClassicObjContainer temp(toWrite);
+//	temp.outputHelper(output, temp.root);
+//	return output;
+//}
 
 
 void ClassicObjContainer::print(ostream & output){
+	output << "*IN*" << " " << "*OUT*" << endl;
+	output << "DVD" << " " << "DVD" << "\t" << "TITLE" << "\t" << "DIRECTOR"
+		<< "\t" << "YEAR" << "\t" << "MO" << "\t" << "ACTOR" << endl;
 	outputHelper(output, root);
 }
