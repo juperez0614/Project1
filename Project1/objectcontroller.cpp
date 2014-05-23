@@ -1,14 +1,15 @@
 #include "objectcontroller.h"
-#include "objectcontainer.h"
-#include "movieobjectcontainer.h"
 #include "classicobjcontainer.h"
+#include "dramaobjcontainer.h"
+#include "comedyobjcontainer.h"
+
 
 
 ObjectController::ObjectController(){
 
 	objController[0] = new ClassicObjContainer;
-	//objController[1] = new MovieObjectContainer;
-	//objController[3] = new MovieObjectContainer;
+	objController[1] = new DramaObjContainer;
+	objController[3] = new ComedyObjContainer;
 }
 
 ObjectController::~ObjectController(){
@@ -28,6 +29,7 @@ int ObjectController::hash(char ch){
 }
 
 void ObjectController::print(ostream & output){
-	for (int i = 0;  )
 	objController[0]->print(output);
+	objController[1]->print(output);
+	objController[3]->print(output);
 }

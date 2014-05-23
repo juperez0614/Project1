@@ -11,7 +11,6 @@ public:
 
 protected:
 	ostream& outputHelper(ostream& output,const containerNode* toWrite);
-	ObjectContainer::containerNode* copyHelper(const containerNode* current);
 };
 
 
