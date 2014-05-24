@@ -19,15 +19,16 @@ class UserObject : public Object{
 public:
 	UserObject();
 	virtual ~UserObject();
-	virtual void setData(ifstream & inputsGetLine);
-	bool operator<(const UserObject & rhs)const;
-	bool operator==(const UserObject & rhs)const;
+	virtual Object* create() const = 0;
+	virtual void setData(ifstream & inputsGetLine) = 0;
+	bool operator<(const Object & rhs)const = 0;
+	bool operator==(const Object & rhs)const = 0;
 
 
 protected:
 	string firstName;
 	string lastName;
-	int id;
+	string id;
 
 };
 

@@ -7,15 +7,17 @@ character of the line and send the command to the appropriate container.
 #include "manager.h"
 
 	
-void Manager::intakeDataFromFile(ifstream & intakeFile){
-	char movieCode;
-	intakeFile >> movieCode;
-	emptyObject =  objFactory.createIt(movieCode); //new Obj
+void Manager::populateData(ifstream & intakeFile){
+	char objectCode;
+	
+	objectCode = intakeFile.peek();
+	emptyObject = factoryControl.selectFactory(objectCode); //new Obj
 	emptyObject->setData(intakeFile);
-	containerArray.insertIt(movieCode, emptyObject);
+	containerArray.insertIt(objectCode, emptyObject);
 	emptyObject = NULL;
 	if (!intakeFile.eof()){
-		intakeDataFromFile(intakeFile);
+		intakeFile.get();
+		populateData(intakeFile);
 	}
 }
 

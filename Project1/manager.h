@@ -10,28 +10,32 @@ character of the line and send the command to the appropriate container.
 #include <iostream>
 #include <fstream>
 #include "objectcontroller.h"
-#include "factory.h"
+#include "factorycontroller.h"
 
 
 using namespace std;
 
 class Manager {
 
-	static const int USER_TYPES = 1;
-	static const int GENRE_TYPES = 3;
 
 public:
 	~Manager();
 	void print(ostream & output);
 	void printContainer(ostream &, ObjectController &);
-	void intakeDataFromFile(ifstream & inputfile);
+	void populateData(ifstream & inputfile);
 	//bool borrowDVD(ifstream input);
 	//bool returnDVD(string dvdName, string custFullName);
 
 protected:
 	Object* emptyObject;
 	ObjectController containerArray;
-	Factory objFactory;
+	FactoryController factoryControl;
 };
 
 #endif
+
+/*
+TODO:
+check for const
+check for bad input and how to mitigate it
+*/

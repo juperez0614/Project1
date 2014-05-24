@@ -17,7 +17,7 @@ public:
 	//MovieObjectContainer(const MovieObjectContainer& current);
 	virtual void print(ostream & output) = 0;
 	virtual ~MovieObjectContainer();
-	bool search(Object* toFind);
+	virtual bool search(Object* toFind);
 
 protected:
 	ObjectContainer::containerNode* copyHelper(const containerNode* current);

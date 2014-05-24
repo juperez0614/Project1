@@ -1,24 +1,5 @@
 #include "factory.h"
 
-Factory::Factory(){
-	objFactory[0] = new ClassicObj();
-	objFactory[1] = new DramaObj();
-	objFactory[3] = new ComedyObj();
-}
+Factory::Factory(){}
 
-Factory::~Factory(){
-	for (int i = 0; i < FACTSIZE; i++){
-		delete objFactory[i];
-		objFactory[i] = NULL;
-	}
-
-}
-
-int Factory::hash(char ch){
-	return ch - 'C'; 
-}
-
-Object* Factory::createIt(char ch){
-	int subscript = hash(ch);
-	return objFactory[subscript]->create();
-}
+Factory::~Factory(){}

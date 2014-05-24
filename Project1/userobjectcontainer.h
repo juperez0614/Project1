@@ -6,22 +6,21 @@ sorted by the UserObject's definition of < and ==.
 #define USEROBJECTCONTAINER_H
 #include "objectcontainer.h"
 #include "userobject.h"
+#include "object.h"
 
 
 
 
-class UserObjectContainer{
+class UserObjectContainer : public ObjectContainer{
 public:
-
+	UserObjectContainer();
 	virtual ~UserObjectContainer();
-	UserObject* search();
+	virtual bool search(Object * toFind);
 	bool insertUser(UserObject & toInsert);
 
 	//TODO: ARE THESE NECESSARY
-	bool removeUser(int idNumber); 
 	bool removeUser(string lastName, string firstName);
 	
-
 protected:
 
 

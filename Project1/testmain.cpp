@@ -69,16 +69,27 @@ int main(){
 	
 //-----------------------------------------------------------------------------
 
-	ifstream intakeFile("data4movies.txt");
-	if (!intakeFile) {
+	ifstream intakeFile1("data4movies.txt");
+	if (!intakeFile1) {
 		cout << "File could not be opened." << endl;
 		return 1;
 	}
 	//file reads
 
 	Manager mystuff;
-	mystuff.intakeDataFromFile(intakeFile);
+	mystuff.populateData(intakeFile1);
+
+	ifstream intakeFile2("data4customers.txt");
+	if (!intakeFile2) {
+		cout << "File could not be opened." << endl;
+		return 2;
+	}
+
+	mystuff.populateData(intakeFile2);
+
 	mystuff.print(cout);
+
+
 
 
 	return 0;

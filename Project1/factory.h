@@ -4,24 +4,19 @@
 #include <iostream>
 #include <string>
 #include "object.h"
-#include "customerobj.h"
-#include "classicobj.h"
-#include "comedyobj.h"
-#include "dramaobj.h"
+
 
 using namespace std;
 
 class Factory{
-	static const int FACTSIZE = 7; 
+
 public:
 	Factory();
-	~Factory();
-	Object* createIt(char ch);
+	virtual ~Factory();
+	virtual Object* createIt(char ch) = 0;
 
-private:
-	Object* objFactory[FACTSIZE];
-	int hash(char ch);
-
+protected:
+	virtual int hash(char ch) = 0;
 };
 
 #endif
