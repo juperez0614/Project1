@@ -9,23 +9,20 @@ character of the line and send the command to the appropriate container.
 	
 void Manager::populateData(ifstream & intakeFile){
 	char objectCode;
-	
 	objectCode = intakeFile.peek();
 	emptyObject = factoryControl.selectFactory(objectCode); //new Obj
 	emptyObject->setData(intakeFile);
 	containerArray.insertIt(objectCode, emptyObject);
 	emptyObject = NULL;
-	if (!intakeFile.eof()){
+	while (!intakeFile.eof()){
 		intakeFile.get();
-		populateData(intakeFile);
+		if (!intakeFile.eof()){
+			populateData(intakeFile);
+		}
 	}
 }
 
-Manager::~Manager(){
-	delete emptyObject;
-	emptyObject = NULL;
-	//other two attributes delete on their own
-}
+Manager::~Manager(){}
 
 
 void Manager::printContainer(ostream & output, ObjectController & toPrint){

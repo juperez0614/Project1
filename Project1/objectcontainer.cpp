@@ -26,7 +26,7 @@ bool ObjectContainer::insert( Object* toInsert){
 ObjectContainer::containerNode* ObjectContainer::insertHelper(containerNode* current, containerNode* toInsert) {
 	if (current == NULL){
 		return toInsert;
-	}
+	} 
 	else {
 		if (*current->data == *toInsert->data){
 			delete toInsert;
@@ -55,19 +55,19 @@ ObjectContainer::containerNode* ObjectContainer::insertHelper(containerNode* cur
 }
 
 ObjectContainer::~ObjectContainer(){
-	destructorHelper(root);
-	root = NULL;
+	/*destructorHelper(root);
+	root = NULL;*/
 }
 
 void ObjectContainer::destructorHelper(containerNode * current){
-	if (current != NULL){
-		destructorHelper(current->left);
-		destructorHelper(current->right);
-		delete current->data;
-		current->data = NULL;
-		delete current;
-		current = NULL;
-	}
+	//if (current != NULL){
+	//	destructorHelper(current->left);
+	//	destructorHelper(current->right);
+	//	delete current->data;
+	//	current->data = NULL;
+	//	delete current;
+	//	current = NULL;
+	//}
 }
 
 bool ObjectContainer::isEmpty()const{

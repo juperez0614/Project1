@@ -9,13 +9,14 @@ CustomerObj::~CustomerObj(){
 	id = "";
 	firstName = "";
 	lastName = "";
-
 	emptyHistoryList(historyTail);
-
+	delete historyRoot;
 
 }
 
 void CustomerObj::emptyHistoryList(historyList* tail){
+	
+	
 	while (tail != historyRoot){
 		tail = tail->prev;
 		tail->next->prev = NULL;
@@ -24,8 +25,8 @@ void CustomerObj::emptyHistoryList(historyList* tail){
 	}
 	//fence post problem
 	delete tail;
-	historyTail = NULL;
-	historyRoot = NULL;
+	tail = NULL;
+
 }
 
 void CustomerObj::setData(ifstream& intake){
@@ -34,7 +35,8 @@ void CustomerObj::setData(ifstream& intake){
 
 
 bool CustomerObj::operator==(const Object &rhs)const {
-	const CustomerObj* p = dynamic_cast<const CustomerObj*>(&rhs);
+	const UserObject* e = dynamic_cast<const UserObject*>(&rhs);
+	const CustomerObj* p = dynamic_cast<const CustomerObj*>(e);
 	if (id == p->id && firstName == p->firstName && lastName == p->lastName){
 		return true;
 	}
@@ -44,7 +46,8 @@ bool CustomerObj::operator==(const Object &rhs)const {
 }
 
 bool CustomerObj::operator<(const Object &rhs) const{
-	const CustomerObj* p = dynamic_cast<const CustomerObj*>(&rhs);
+	const UserObject* e = dynamic_cast<const UserObject*>(&rhs);
+	const CustomerObj* p = dynamic_cast<const CustomerObj*>(e);
 	if (id < p->id){
 		return true;
 	}
@@ -59,6 +62,9 @@ bool CustomerObj::operator<(const Object &rhs) const{
 			else{
 				return false;
 			}
+		}
+		else {
+			return false;
 		}
 	}
 	else {

@@ -12,8 +12,9 @@ DramaObj::~DramaObj(){
 }
 
 bool DramaObj::operator==(const Object & rhs) const{
-	const DramaObj* p = dynamic_cast< const DramaObj* >(&rhs);
-	if (title == p->title && director == p->director && year == p->year){
+	const MovieObject& e = dynamic_cast<const MovieObject&>(rhs);
+	const DramaObj& p = dynamic_cast<const DramaObj&>(e);
+	if (title == p.title && director == p.director && year == p.year){
 		return true;
 	}
 	else {
@@ -22,12 +23,13 @@ bool DramaObj::operator==(const Object & rhs) const{
 }
 
 bool DramaObj::operator<(const Object & rhs) const{
-	const DramaObj* p = dynamic_cast< const DramaObj* >(&rhs);
-	if (director < p->director){
+	const MovieObject& e = dynamic_cast<const MovieObject&>(rhs);
+	const DramaObj& p = dynamic_cast<const DramaObj&>(e);
+	if (director < p.director){
 		return true;
 	}
-	else if (director == p->director){
-		if (title < p->title){
+	else if (director == p.director){
+		if (title < p.title){
 			return true;
 		}
 		else {

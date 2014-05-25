@@ -78,6 +78,7 @@ int main(){
 
 	Manager mystuff;
 	mystuff.populateData(intakeFile1);
+	intakeFile1.close();
 
 	ifstream intakeFile2("data4customers.txt");
 	if (!intakeFile2) {
@@ -86,6 +87,7 @@ int main(){
 	}
 
 	mystuff.populateData(intakeFile2);
+	intakeFile2.close();
 
 	mystuff.print(cout);
 

@@ -5,6 +5,13 @@ FactoryController::FactoryController(){
 	factArray[1] = new UserFactory;
 }
 
+FactoryController::~FactoryController(){
+	for (int i = 0; i < FACTORIES; i++){
+		delete factArray[i];
+		factArray[i] = NULL;
+	}
+ }
+
 Object* FactoryController::selectFactory(char objCode){
 	if (objCode >= 65 && objCode <= 90){	//can't include z 
 		 return factArray[0]->createIt(objCode);

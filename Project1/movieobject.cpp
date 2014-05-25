@@ -1,6 +1,9 @@
 #include "movieobject.h"
 
 MovieObject::MovieObject():Object(){
+	title = "";
+	year = 0;
+	director = "";
 	quantity = 10;
 }
 

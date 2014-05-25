@@ -12,9 +12,9 @@ public:
 	ObjectContainer();
 	//ObjectContainer(const ObjectContainer& current);
 	virtual ~ObjectContainer();
-	bool insert(Object* toInsert);
+	virtual bool insert(Object* toInsert);
 	virtual bool search(Object* toFind) = 0;
-	bool isEmpty() const; 
+	virtual bool isEmpty() const; 
 	virtual void print(ostream & output) = 0;
 
 protected:
@@ -26,8 +26,7 @@ protected:
 
 	containerNode* root;
 	containerNode* insertHelper(containerNode* current, containerNode* toInsert);
-	void destructorHelper(containerNode* current);
-	ostream& outputHelper(ostream& output, containerNode* toWrite);
-	containerNode* copyHelper(const containerNode* current);
+	virtual void destructorHelper(containerNode* current);
+	virtual ostream& outputHelper(ostream& output, const containerNode* toWrite) = 0;
 };
 #endif

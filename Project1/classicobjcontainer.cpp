@@ -1,15 +1,41 @@
 #include "classicobjcontainer.h"
 
 
-ClassicObjContainer::ClassicObjContainer() : MovieObjectContainer(){}
+ClassicObjContainer::ClassicObjContainer() : MovieObjectContainer(){
+	root = NULL;
+}
 
+ClassicObjContainer::~ClassicObjContainer(){
+	destructorHelper(root);
+	root = NULL;
+}
+
+void ClassicObjContainer::destructorHelper(containerNode * current){
+	if (current != NULL){
+		destructorHelper(current->left);
+		destructorHelper(current->right);
+		const MovieObject* e = dynamic_cast<const MovieObject*> (current->data);
+		const ClassicObj* p = dynamic_cast< const ClassicObj* >(e);
+		current->data = NULL;
+		delete current;
+		current = NULL;
+	}
+}
+
+bool ClassicObjContainer::isEmpty()const{
+	return (root == NULL);
+}
 
 ostream& ClassicObjContainer::outputHelper(ostream& output,const containerNode * toWrite){
+	if (toWrite == NULL){
+		return output;
+	}
 	if (toWrite->left != NULL){
 		outputHelper(output, toWrite->left);
 	}
-	const ClassicObj* p = dynamic_cast< const ClassicObj* >(toWrite->data);
-	output << *p << endl; 
+	const MovieObject* e = dynamic_cast<const MovieObject*> (toWrite->data);
+	const ClassicObj* p = dynamic_cast< const ClassicObj* >(e);
+	output << *p << endl;
 	if (toWrite->right != NULL){
 		outputHelper(output, toWrite->right);
 	}

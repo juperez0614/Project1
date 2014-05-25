@@ -8,12 +8,7 @@ MovieFactory::MovieFactory() :Factory(){
 	objFactory[3] = new ComedyObj;
 }
 
-MovieFactory::~MovieFactory(){
-	for (int i = 0; i < SIZE; i++){
-		delete objFactory[i];
-		objFactory[i] = NULL;
-	}
-}
+MovieFactory::~MovieFactory(){}
 
 Object* MovieFactory::createIt(char movieCode){
 	int subscript = hash(movieCode);

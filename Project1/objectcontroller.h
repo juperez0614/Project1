@@ -1,6 +1,12 @@
 #ifndef OBJECTCONTROLLER_H
 #define OBJECTCONTROLLER_H
 #include "objectcontainer.h"
+#include "movieobjectcontainer.h"
+#include "userobjectcontainer.h"
+#include "classicobjcontainer.h"
+#include "comedyobjcontainer.h"
+#include "dramaobjcontainer.h"
+#include "customerobjcontainer.h"
 
 using namespace std;
 

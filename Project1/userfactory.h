@@ -5,7 +5,7 @@
 #include "customerobj.h"
 
 class UserFactory : public Factory{
-	static const int SIZE = 7;
+	static const int SIZE = 1;
 public:
 	UserFactory();
 	virtual ~UserFactory();

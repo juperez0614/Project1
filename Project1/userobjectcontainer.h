@@ -15,14 +15,14 @@ class UserObjectContainer : public ObjectContainer{
 public:
 	UserObjectContainer();
 	virtual ~UserObjectContainer();
-	virtual bool search(Object * toFind);
-	bool insertUser(UserObject & toInsert);
+	virtual void print(ostream & output) = 0;
+	virtual bool search(Object* toFind);
+	virtual bool isEmpty() const;
 
-	//TODO: ARE THESE NECESSARY
-	bool removeUser(string lastName, string firstName);
-	
+
 protected:
-
+	virtual void destructorHelper(containerNode* current) = 0;
+	virtual ostream& outputHelper(ostream& output, const containerNode* toWrite) = 0;
 
 };
 

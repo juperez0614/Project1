@@ -10,10 +10,14 @@ class CustomerObjContainer : public UserObjectContainer {
 
 public:
 	CustomerObjContainer();
+	virtual ~CustomerObjContainer();
 	virtual void print(ostream & output);
+	//virtual bool search(Object* toFind);
+	virtual bool isEmpty() const;
 
 protected:
-	ostream& outputHelper(ostream& output, const containerNode* toWrite);
+	virtual void destructorHelper(containerNode* current);
+	virtual ostream& outputHelper(ostream& output, const containerNode* toWrite);
 };
 
 

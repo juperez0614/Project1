@@ -1,6 +1,10 @@
 #include "classicobj.h"
 
-ClassicObj::ClassicObj():MovieObject(){}
+ClassicObj::ClassicObj():MovieObject(){
+	month = 0;
+	actorFirst = "";
+	actorLast = "";
+}
 
 ClassicObj::ClassicObj(string actorName, string actorLastName, int mon, int yr):MovieObject("", yr, ""){
 	month = mon;
@@ -19,10 +23,11 @@ ClassicObj::~ClassicObj(){
 
 
 bool ClassicObj::operator==(const Object &rhs)const {
-	const ClassicObj* p = dynamic_cast< const ClassicObj* >(&rhs);
-	if (year == p->year && month == p->month && title == p->title && 
-			director == p->director && actorFirst == p->actorFirst &&
-			actorLast == p->actorLast){
+	const MovieObject& e = dynamic_cast<const MovieObject&> (rhs);
+	const ClassicObj& p = dynamic_cast< const ClassicObj& >(e);
+	if (year == p.year && month == p.month && title == p.title &&
+			director == p.director && actorFirst == p.actorFirst &&
+			actorLast == p.actorLast){
 		return true;
 	}
 	else {
@@ -31,25 +36,29 @@ bool ClassicObj::operator==(const Object &rhs)const {
 }
 
 bool ClassicObj::operator<(const Object &rhs) const{
-	const ClassicObj* p = dynamic_cast< const ClassicObj* >(&rhs);
-	if (year < p->year){
+	const MovieObject& e = dynamic_cast<const MovieObject&> (rhs);
+	const ClassicObj& p = dynamic_cast< const ClassicObj& >(e);
+	if (year < p.year){
 		return true;
 	}
-	else if (year == p->year){
-		if (month < p->month){
+	else if (year == p.year){
+		if (month < p.month){
 			return true;
 		}
-		else if (month == p->month){
-			if (actorLast < p->actorLast){
+		else if (month == p.month){
+			if (actorLast < p.actorLast){
 				return true;
 			}
-			else if (actorLast == p->actorLast){
-				if (actorFirst < p->actorFirst){
+			else if (actorLast == p.actorLast){
+				if (actorFirst < p.actorFirst){
 					return true; 
 				}
 				else{
 					return false; 
 				}
+			}
+			else {
+				return false;
 			}
 		}
 		else {
@@ -81,6 +90,5 @@ ostream& operator<<(ostream& output, const ClassicObj& toWrite){
 		<< toWrite.title << "\t" << toWrite.director << "\t" << toWrite.year 
 		<< "\t" << toWrite.month << "\t" << toWrite.actorFirst 
 		<< " " << toWrite.actorLast << endl;
-	return output;  
-	
+	return output;  	
 }

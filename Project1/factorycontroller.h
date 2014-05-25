@@ -11,6 +11,7 @@ class FactoryController {
 	const static int FACTORIES = 3;
 public:
 	FactoryController();
+	~FactoryController();
 	Object* selectFactory(char ch);
 
 private:

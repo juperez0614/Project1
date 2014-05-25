@@ -12,8 +12,9 @@ ComedyObj::~ComedyObj(){
 }
 
 bool ComedyObj::operator==(const Object & rhs)const{
-	const ComedyObj* p = dynamic_cast< const ComedyObj* >(&rhs);
-	if (title == p->title && director == p->director && year == p->year){
+	const MovieObject& e = dynamic_cast<const MovieObject&>(rhs);
+	const ComedyObj& p = dynamic_cast< const ComedyObj& >(e);
+	if (title == p.title && director == p.director && year == p.year){
 		return true;
 	}
 	else {
@@ -22,7 +23,8 @@ bool ComedyObj::operator==(const Object & rhs)const{
 }
 
 bool ComedyObj::operator<(const Object & rhs)const {
-	const ComedyObj* p = dynamic_cast< const ComedyObj* >(&rhs);
+	const MovieObject* e = dynamic_cast<const MovieObject*>(&rhs);
+	const ComedyObj* p = dynamic_cast< const ComedyObj* >(e); 
 	if (title < p->title){
 		return true;
 	}

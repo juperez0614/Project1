@@ -3,8 +3,19 @@
 UserObjectContainer::UserObjectContainer() :ObjectContainer(){}
 
 
-bool UserObjectContainer::search(Object* toFind){
+
+UserObjectContainer::~UserObjectContainer(){}
+
+
+bool UserObjectContainer::search(Object * toFind){
 	return true;
 }
 
-UserObjectContainer::~UserObjectContainer(){}
+bool UserObjectContainer::isEmpty() const{
+	if (root == NULL){
+		return true;
+	}
+	else {
+		return false;
+	}
+}

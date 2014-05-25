@@ -1,14 +1,41 @@
 #include "dramaobjcontainer.h"
 
 
-DramaObjContainer::DramaObjContainer() : MovieObjectContainer(){}
+DramaObjContainer::DramaObjContainer() : MovieObjectContainer(){
+	root = NULL;
+}
 
+
+DramaObjContainer::~DramaObjContainer(){
+	destructorHelper(root);
+	root = NULL;
+}
+
+void DramaObjContainer::destructorHelper(containerNode * current){
+	if (current != NULL){
+		destructorHelper(current->left);
+		destructorHelper(current->right);
+		const MovieObject* e = dynamic_cast<const MovieObject*>(current->data);
+		const DramaObj* p = dynamic_cast<const DramaObj*>(e);
+		current->data = NULL;
+		delete current;
+		current = NULL;
+	}
+}
+
+bool DramaObjContainer::isEmpty()const{
+	return (root == NULL);
+}
 
 ostream& DramaObjContainer::outputHelper(ostream& output, const containerNode * toWrite){
+	if (toWrite == NULL){
+		return output;
+	}
 	if (toWrite->left != NULL){
 		outputHelper(output, toWrite->left);
 	}
-	const DramaObj* p = dynamic_cast< const DramaObj* >(toWrite->data);
+	const MovieObject* e = dynamic_cast<const MovieObject*>(toWrite->data);
+	const DramaObj* p = dynamic_cast<const DramaObj*>(e);
 	output << *p << endl;
 	if (toWrite->right != NULL){
 		outputHelper(output, toWrite->right);
