@@ -47,20 +47,23 @@ Object* DramaObj::create()const {
 }
 
 void DramaObj::setData(ifstream& intake){
-	intake.get();
-	getline(intake, director, ',');
+	char code;
+	intake >> code;
+	intake.get(); // get (and ignore) blank before director
+	getline(intake, director, ',');// input director
 
-	intake.get();
-	getline(intake, title, ',');
+	intake.get();                       // get (and ignore) blank before title
+	getline(intake, title, ',');        // input title
 
-	intake >> year;
+	intake >> year;           // input year
+	string s;
+	getline(intake, s, '\n'); // get eoln
 }
 
-ostream& operator<<(ostream& output, const DramaObj& toWrite){
-	output << toWrite.quantity << "\t" << 10 - toWrite.quantity << "\t"
-		<< toWrite.title << "\t" << "\t" << toWrite.director << "\t" << toWrite.year
-		<< endl;
-	return output;
 
+void DramaObj::display()const{
+	cout << quantity << "\t" << 10 - quantity << "\t"
+		<< title << "\t" << "\t" << director << "\t" << year
+		<< endl;
 }
 

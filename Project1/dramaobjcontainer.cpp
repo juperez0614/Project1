@@ -2,7 +2,6 @@
 
 
 DramaObjContainer::DramaObjContainer() : MovieObjectContainer(){
-	root = NULL;
 }
 
 
@@ -36,7 +35,7 @@ ostream& DramaObjContainer::outputHelper(ostream& output, const containerNode * 
 	}
 	const MovieObject* e = dynamic_cast<const MovieObject*>(toWrite->data);
 	const DramaObj* p = dynamic_cast<const DramaObj*>(e);
-	output << *p << endl;
+	p->display();
 	if (toWrite->right != NULL){
 		outputHelper(output, toWrite->right);
 	}

@@ -7,17 +7,19 @@
 using namespace std;
 
 class ObjectContainer {
-	friend ostream& operator<<(ostream& output, const ObjectContainer& toWrite);
 public:
 	ObjectContainer();
 	//ObjectContainer(const ObjectContainer& current);
 	virtual ~ObjectContainer();
 	virtual bool insert(Object* toInsert);
-	virtual bool search(Object* toFind) = 0;
+	//virtual bool search(Object* toFind) = 0;
 	virtual bool isEmpty() const; 
-	virtual void print(ostream & output) = 0;
+	virtual void print();
+	void setOverhead(string setTo);
 
 protected:
+	string inOutHeading;
+	string heading; 
 	 struct containerNode{
 			Object* data;
 			containerNode* left;
@@ -27,6 +29,6 @@ protected:
 	containerNode* root;
 	containerNode* insertHelper(containerNode* current, containerNode* toInsert);
 	virtual void destructorHelper(containerNode* current);
-	virtual ostream& outputHelper(ostream& output, const containerNode* toWrite) = 0;
+	virtual void print(const containerNode* toWrite);
 };
 #endif

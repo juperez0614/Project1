@@ -8,8 +8,6 @@ using namespace std;
 
 class Object{
 
-	//virtual friend ostream & operator<<(ostream& output, const Object& toOutput) = 0;
-	//virtual friend ifstream & operator>>(ifstream& input, Object& toWrite) = 0;
 
 public:
 	Object();
@@ -18,7 +16,7 @@ public:
 	virtual void setData(ifstream & intake) = 0;
 	virtual bool operator<(const Object & rhs)const = 0;
 	virtual bool operator==(const Object & rhs)const = 0;
-
+	virtual void display() const = 0;
 
 protected:
 	

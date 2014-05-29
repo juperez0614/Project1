@@ -20,8 +20,8 @@ class Manager {
 
 public:
 	~Manager();
-	void print(ostream & output);
-	void printContainer(ostream &, ObjectController &);
+	void print();
+	void printContainer(ObjectController &) const;
 	void populateData(ifstream & inputfile);
 	//bool borrowDVD(ifstream input);
 	//bool returnDVD(string dvdName, string custFullName);

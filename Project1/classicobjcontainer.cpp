@@ -2,7 +2,6 @@
 
 
 ClassicObjContainer::ClassicObjContainer() : MovieObjectContainer(){
-	root = NULL;
 }
 
 ClassicObjContainer::~ClassicObjContainer(){
@@ -35,7 +34,7 @@ ostream& ClassicObjContainer::outputHelper(ostream& output,const containerNode *
 	}
 	const MovieObject* e = dynamic_cast<const MovieObject*> (toWrite->data);
 	const ClassicObj* p = dynamic_cast< const ClassicObj* >(e);
-	output << *p << endl;
+	p->display();
 	if (toWrite->right != NULL){
 		outputHelper(output, toWrite->right);
 	}

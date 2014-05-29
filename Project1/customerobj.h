@@ -3,7 +3,6 @@
 #include "userobject.h"
 
 class CustomerObj : public UserObject{
-	friend ostream& operator<<(ostream& output, const CustomerObj & toWrite);
 public:
 	CustomerObj();
 	virtual ~CustomerObj();
@@ -11,6 +10,7 @@ public:
 	virtual void setData(ifstream & intake);
 	virtual bool operator<(const Object & rhs) const;
 	virtual bool operator==(const Object & rhs) const;
+	virtual void display() const;
 
 protected:
 

@@ -67,49 +67,35 @@
   <ItemGroup>
     <ClInclude Include="classicobj.h" />
     <ClInclude Include="comedyobj.h" />
-    <ClInclude Include="customerFactory.h" />
     <ClInclude Include="customerobj.h" />
-    <ClInclude Include="customerobjcontainer.h" />
     <ClInclude Include="dramaobj.h" />
-    <ClInclude Include="dramaobjcontainer.h" />
     <ClInclude Include="factory.h" />
-    <ClInclude Include="classicobjcontainer.h" />
-    <ClInclude Include="comedyobjcontainer.h" />
     <ClInclude Include="factorycontroller.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="moviefactory.h" />
     <ClInclude Include="movieobject.h" />
-    <ClInclude Include="movieobjectcontainer.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="objectcontainer.h" />
     <ClInclude Include="objectcontroller.h" />
     <ClInclude Include="userfactory.h" />
     <ClInclude Include="userobject.h" />
-    <ClInclude Include="userobjectcontainer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="classicobj.cpp" />
-    <ClCompile Include="classicobjcontainer.cpp" />
     <ClCompile Include="comedyobj.cpp" />
-    <ClCompile Include="comedyobjcontainer.cpp" />
-    <ClCompile Include="customerfactory.cpp" />
     <ClCompile Include="customerobj.cpp" />
-    <ClCompile Include="customerobjcontainer.cpp" />
     <ClCompile Include="dramaobj.cpp" />
-    <ClCompile Include="dramaobjcontainer.cpp" />
     <ClCompile Include="factory.cpp" />
     <ClCompile Include="factorycontroller.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="moviefactory.cpp" />
     <ClCompile Include="movieobject.cpp" />
-    <ClCompile Include="movieobjectcontainer.cpp" />
     <ClCompile Include="object.cpp" />
     <ClCompile Include="objectcontainer.cpp" />
     <ClCompile Include="objectcontroller.cpp" />
     <ClCompile Include="testmain.cpp" />
     <ClCompile Include="userfactory.cpp" />
     <ClCompile Include="userobject.cpp" />
-    <ClCompile Include="userobjectcontainer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

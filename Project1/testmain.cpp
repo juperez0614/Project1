@@ -80,6 +80,7 @@ int main(){
 	mystuff.populateData(intakeFile1);
 	intakeFile1.close();
 
+
 	ifstream intakeFile2("data4customers.txt");
 	if (!intakeFile2) {
 		cout << "File could not be opened." << endl;
@@ -88,10 +89,10 @@ int main(){
 
 	mystuff.populateData(intakeFile2);
 	intakeFile2.close();
+	
+	mystuff.print();
 
-	mystuff.print(cout);
-
-
+	
 
 
 	return 0;

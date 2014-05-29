@@ -8,10 +8,12 @@ character of the line and send the command to the appropriate container.
 
 	
 void Manager::populateData(ifstream & intakeFile){
+/*
 	char objectCode;
 	objectCode = intakeFile.peek();
 	emptyObject = factoryControl.selectFactory(objectCode); //new Obj
 	emptyObject->setData(intakeFile);
+emptyObject->display();
 	containerArray.insertIt(objectCode, emptyObject);
 	emptyObject = NULL;
 	while (!intakeFile.eof()){
@@ -20,17 +22,29 @@ void Manager::populateData(ifstream & intakeFile){
 			populateData(intakeFile);
 		}
 	}
+*/
+	char objectCode;
+        for (;;) {
+	   objectCode = intakeFile.peek();
+	  // cout << "peek " << objectCode << endl;
+	   if (objectCode == EOF) break;
+	   emptyObject = factoryControl.selectFactory(objectCode); //new Obj
+	   emptyObject->setData(intakeFile);
+	//emptyObject->display();
+	   containerArray.insertIt(objectCode, emptyObject);
+	   //emptyObject = NULL;
+	}
 }
 
 Manager::~Manager(){}
 
 
-void Manager::printContainer(ostream & output, ObjectController & toPrint){
-	toPrint.print(output);
+void Manager::printContainer(ObjectController & toPrint) const{
+	toPrint.print();
 }
 
-void Manager::print(ostream & output){
-	printContainer(output, containerArray);
+void Manager::print(){
+	printContainer(containerArray);
 }
 
 	//peek and get line are from ifstream class itself

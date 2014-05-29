@@ -8,7 +8,7 @@
 
 
 class FactoryController {
-	const static int FACTORIES = 3;
+	const static int FACTORIES = 2;
 public:
 	FactoryController();
 	~FactoryController();

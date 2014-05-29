@@ -21,9 +21,6 @@
     <ClInclude Include="movieobject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="movieobjectcontainer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="classicobj.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -31,9 +28,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="comedyobj.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="userobjectcontainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="userobject.h">
@@ -54,15 +48,6 @@
     <ClInclude Include="factory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="classicobjcontainer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="comedyobjcontainer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dramaobjcontainer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="factorycontroller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -72,21 +57,12 @@
     <ClInclude Include="userfactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="customerFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="customerobjcontainer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="movieobject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="movieobjectcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="factory.cpp">
@@ -113,15 +89,6 @@
     <ClCompile Include="objectcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="classicobjcontainer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="comedyobjcontainer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="dramaobjcontainer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="factorycontroller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -135,15 +102,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="userobject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="customerfactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="customerobjcontainer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="userobjectcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

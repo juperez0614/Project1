@@ -1,7 +1,6 @@
 #include "customerobjcontainer.h"
 
 CustomerObjContainer::CustomerObjContainer() : UserObjectContainer(){
-	root = NULL;
 }
 
 CustomerObjContainer::~CustomerObjContainer(){
@@ -31,7 +30,7 @@ ostream& CustomerObjContainer::outputHelper(ostream& output, const containerNode
 	}
 	const UserObject* e = dynamic_cast<const UserObject*>(toWrite->data);
 	const CustomerObj* p = dynamic_cast<const CustomerObj*>(e);
-	output << *p << endl;
+	p->display();
 	if (toWrite->right != NULL){
 		outputHelper(output, toWrite->right);
 	}

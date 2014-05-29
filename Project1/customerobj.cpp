@@ -31,6 +31,8 @@ void CustomerObj::emptyHistoryList(historyList* tail){
 
 void CustomerObj::setData(ifstream& intake){
 	intake >> id >> firstName >> lastName;
+	string s;
+	getline(intake, s, '\n');
 }
 
 
@@ -77,7 +79,6 @@ Object* CustomerObj::create() const{
 }
 
 
-ostream& operator<<(ostream& output, const CustomerObj& toWrite){
-	output << toWrite.id << toWrite.lastName << toWrite.firstName << endl;
-	return output;
+void CustomerObj::display() const{
+	cout << id << "\t" << lastName << "\t" << firstName << endl;
 }

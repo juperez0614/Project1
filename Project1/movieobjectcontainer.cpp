@@ -1,6 +1,7 @@
 #include "movieobjectcontainer.h"
 
-MovieObjectContainer::MovieObjectContainer() :ObjectContainer(){}
+MovieObjectContainer::MovieObjectContainer() :ObjectContainer(){
+}
 
 
 

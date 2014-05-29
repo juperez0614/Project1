@@ -4,7 +4,6 @@
 
 
 class DramaObj : public MovieObject {
-	friend ostream& operator<<(ostream& output, const DramaObj& toWrite);
 public:
 	DramaObj();
 	DramaObj(string, string);
@@ -13,6 +12,7 @@ public:
 	virtual void setData(ifstream&);
 	virtual bool operator<(const Object & rhs) const;
 	virtual bool operator==(const Object & rhs) const;
+	virtual void display() const;
 
 protected:
 

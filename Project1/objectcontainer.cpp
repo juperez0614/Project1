@@ -1,7 +1,10 @@
 #include "objectcontainer.h"
 
+
 ObjectContainer::ObjectContainer(){
 	root = NULL; 
+	inOutHeading = "*IN* *OUT*";
+	heading = "";
 }
 
 
@@ -55,21 +58,49 @@ ObjectContainer::containerNode* ObjectContainer::insertHelper(containerNode* cur
 }
 
 ObjectContainer::~ObjectContainer(){
-	/*destructorHelper(root);
-	root = NULL;*/
+	destructorHelper(root);
 }
 
 void ObjectContainer::destructorHelper(containerNode * current){
-	//if (current != NULL){
-	//	destructorHelper(current->left);
-	//	destructorHelper(current->right);
-	//	delete current->data;
-	//	current->data = NULL;
-	//	delete current;
-	//	current = NULL;
-	//}
+	if (current == NULL){
+		return;
+	}
+	else{
+		if (current->left != NULL){
+			destructorHelper(current->left);
+		}
+		if (current->right != NULL){
+			destructorHelper(current->right);
+		}
+	}
+	delete current -> data;
+	delete current;
+	current = NULL;
 }
 
 bool ObjectContainer::isEmpty()const{
 	return (root == NULL);
+}
+
+void ObjectContainer::print(){
+	cout << inOutHeading << endl;
+	cout << heading << endl;
+	print(root);
+}
+
+void ObjectContainer::print(const containerNode* toWrite){
+	if (toWrite == NULL){
+		cout << "";
+	}
+	if (toWrite->left != NULL){
+		print( toWrite->left);
+	}
+	toWrite->data->display();
+	if (toWrite->right != NULL){
+		print(toWrite->right);
+	}
+}
+
+void ObjectContainer::setOverhead(string setTo){
+	heading = setTo;
 }

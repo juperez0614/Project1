@@ -1,20 +1,31 @@
 #include "objectcontroller.h"
 
 
-
+const string ObjectController::NORMAL = "DVD\tDVD\tTITLE\t\tDIRECTOR\tYEAR";
+const string ObjectController::CLASSIC = "DVD\tDVD\tTITLE\t\tDIRECTOR\tYEAR\tMONTH\tACTOR";
+const string ObjectController::CUSTOMER = "ID\tLAST NAME\tFIRST NAME";
 
 ObjectController::ObjectController(){
-
-	objController[0] = new ClassicObjContainer();
-	objController[1] = new DramaObjContainer();
-	objController[3] = new ComedyObjContainer();
-	objController[4] = new CustomerObjContainer();
+	
+	objController[0] = new ObjectContainer(); //classic
+	objController[0]->setOverhead(CLASSIC);
+	objController[1] = new ObjectContainer(); // drama
+	objController[1]->setOverhead(NORMAL);
+	objController[2] = NULL;
+	objController[3] = new ObjectContainer(); // comedy
+	objController[3]->setOverhead(NORMAL);
+	objController[4] = new ObjectContainer(); // customer
+	objController[4]->setOverhead(CUSTOMER);
+	objController[5] = NULL;
+	objController[6] = NULL;
 }
 
 ObjectController::~ObjectController(){
-	for (int i = 0; i < FACTSIZE; i++){
-		delete objController[i];
-		objController[i] = NULL;
+	for (int i = 0; i < OBJCONTROLSIZE; i++){
+		if (objController[i] != NULL){
+			delete objController[i];
+			objController[i] = NULL;
+		}
 	}
 }
 
@@ -32,10 +43,11 @@ int ObjectController::hash(char ch){
 	}
 }
 
-void ObjectController::print(ostream & output){
-	for (int i = 0; i < FACTSIZE; i++){
+void ObjectController::print(){
+
+	for (int i = 0; i < OBJCONTROLSIZE; i++){
 		if (objController[i] != NULL){
-			objController[i]->print(output);
+			objController[i]->print();
 		}
 	}
 }

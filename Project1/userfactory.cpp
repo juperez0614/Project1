@@ -1,7 +1,7 @@
 #include "userfactory.h"
 
 UserFactory::UserFactory() :Factory(){
-	objFactory[0] = new CustomerObj;
+	objFactory[0] = new CustomerObj();
 }
 
 UserFactory::~UserFactory(){

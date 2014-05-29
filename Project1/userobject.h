@@ -13,8 +13,6 @@ using namespace std;
 
 class UserObject : public Object{
 
-	friend ostream & operator<<(ostream& output, const UserObject& toOutput);
-	friend ifstream & operator>>(ifstream& input, UserObject& toWrite);
 
 public:
 	UserObject();
@@ -23,7 +21,7 @@ public:
 	virtual void setData(ifstream & inputsGetLine) = 0;
 	bool operator<(const Object & rhs)const = 0;
 	bool operator==(const Object & rhs)const = 0;
-
+	virtual void display() const = 0;
 
 protected:
 	string firstName;

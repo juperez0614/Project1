@@ -1,8 +1,8 @@
 #include "factorycontroller.h"
 
 FactoryController::FactoryController(){
-	factArray[0] = new MovieFactory;
-	factArray[1] = new UserFactory;
+	factArray[0] = new MovieFactory();
+	factArray[1] = new UserFactory();
 }
 
 FactoryController::~FactoryController(){

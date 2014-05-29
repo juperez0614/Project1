@@ -74,21 +74,26 @@ Object* ClassicObj::create() const{
 }
 
 void ClassicObj::setData(ifstream & intake){
+    char code;
+ 	intake >> code;
 	intake.get(); // get (and ignore) blank before director
 	getline(intake, director, ',');// input director
 	    
 	intake.get();                       // get (and ignore) blank before title
 	getline(intake, title, ',');        // input title
 
-	intake.get();                       // get (and ignore) blank before actor
 	intake >> actorFirst >> actorLast;  // input star's name
-	intake >> month >> year;            // input month and year
+	intake >> month >> year;            // input month and year            // input month and year
+	string s;
+	getline(intake, s, '\n');                       // get eoln
 }
 
-ostream& operator<<(ostream& output, const ClassicObj& toWrite){
-	output << toWrite.quantity << "\t" << (10 - toWrite.quantity) << "\t" 
-		<< toWrite.title << "\t" << toWrite.director << "\t" << toWrite.year 
-		<< "\t" << toWrite.month << "\t" << toWrite.actorFirst 
-		<< " " << toWrite.actorLast << endl;
-	return output;  	
+
+
+void ClassicObj::display() const {
+	cout << quantity << "\t" << (10 - quantity) << "\t" 
+		<< title << "\t" << director << "\t" << year 
+		<< "\t" << month << "\t" << actorFirst 
+		<< " " << actorLast << endl;
 }
+

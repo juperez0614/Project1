@@ -13,19 +13,16 @@ using namespace std;
 
 class MovieObject : public Object{
 
-	//virtual friend ostream & operator<<(ostream& output, const MovieObject& toOutput);
-	//virtual friend ifstream & operator>>(ifstream& input, MovieObject& toWrite);
 
 public:
 	MovieObject();
 	MovieObject(string, int, string);
-	//virtual void setData(ifstream & inputsGetLine);
 	virtual ~MovieObject();
 	virtual Object* create() const = 0;
 	virtual void setData(ifstream & intake) = 0;
 	virtual bool operator<(const Object & rhs)const = 0;
 	virtual bool operator==(const Object & rhs)const = 0;
-
+	virtual void display()const = 0;
 
 protected:
 	string title;

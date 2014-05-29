@@ -4,7 +4,6 @@
 
 
 class ClassicObj : public MovieObject {
-	friend ostream& operator<<(ostream& output, const ClassicObj& toWrite);
 public:
 	ClassicObj();
 	ClassicObj(string, string, int, int);
@@ -13,6 +12,7 @@ public:
 	virtual void setData(ifstream & intake);
 	virtual bool operator<(const Object & rhs)const;
 	virtual bool operator==(const Object & rhs)const;
+	virtual void display()const;
 
 protected:
 	string actorFirst;
