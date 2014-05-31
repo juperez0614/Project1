@@ -1,5 +1,7 @@
 #include "history.h"
 
+class CustomerObj;
+
 History::History() : CommandAction(){
 }
 

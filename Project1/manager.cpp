@@ -34,14 +34,18 @@ void Manager::applyAction(ifstream & intakeFile){
 		custTemp->setPartialData(intakeFile); // id to set
 		custTemp = containerArray.find(1, custTemp);
 		//customer is completely retireved
-		emptyAction->setData(intakeFile); // needs to be after because of id
-		
-		movieTemp = factoryControl.selectFactory(emptyAction->getCode());
-		movieTemp->setPartialData(intakeFile); //initial set
-		movieTemp = containerArray.find(emptyAction->getCode(), movieTemp); //real set
-		//customer is completely retreived
-		emptyAction->customerSet(custTemp); // set to objects
-		emptyAction->movieSet(movieTemp); //set
+
+		if (objectCode != 'H'){
+			emptyAction->setData(intakeFile); // needs to be after because of id
+
+			movieTemp = factoryControl.selectFactory(emptyAction->getCode());
+			movieTemp->setPartialData(intakeFile); //initial set
+			movieTemp = containerArray.find(emptyAction->getCode(), movieTemp); //real set
+			//customer is completely retreived
+			 // set to objects
+			emptyAction->movieSet(movieTemp); //set
+		}
+		emptyAction->customerSet(custTemp);
 		//all attributes set, emptyAction is ready...
 		emptyAction->performAct();
 		//emptyObject = NULL;

@@ -78,11 +78,16 @@ void CustomerObj::displayHistory() const{
 	cout << "*** Customer ID= ";
 	display();
 	cout << endl;
-	historyList* current = historyRoot;
-	while (current != NULL){
-		current->data->display();
-		current = current->next;
-	}// need to test for overflow
+	if (historyRoot == NULL){
+		cout << "No Transactions" << endl;
+	}
+	else {
+		historyList* current = historyRoot;
+		while (current != NULL){
+			current->data->display();
+			current = current->next;
+		}// need to test for overflow
+	}
 }
 
 void CustomerObj::addToHistory(CommandAction* toInsert){
