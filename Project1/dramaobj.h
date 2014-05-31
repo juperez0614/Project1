@@ -6,13 +6,15 @@
 class DramaObj : public MovieObject {
 public:
 	DramaObj();
-	DramaObj(string, string);
 	virtual ~DramaObj();
 	virtual Object* create() const;
 	virtual void setData(ifstream&);
+	virtual void setPartialData(ifstream & intake);
 	virtual bool operator<(const Object & rhs) const;
 	virtual bool operator==(const Object & rhs) const;
 	virtual void display() const;
+	virtual void actionDisplay() const;
+	virtual bool equals(Object* target)const;
 
 protected:
 

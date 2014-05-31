@@ -20,3 +20,12 @@ MovieObject::~MovieObject(){
 	director = "";
 	quantity = 0;
 }
+
+int MovieObject::getQuantity() const{
+	return quantity;
+}
+
+bool MovieObject::setQuantity(int change){
+	quantity = quantity + change; 
+	return true;
+}

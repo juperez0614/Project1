@@ -90,6 +90,15 @@ int main(){
 	mystuff.populateData(intakeFile2);
 	intakeFile2.close();
 	
+	ifstream intakeFile3("data4actions.txt");
+	if (!intakeFile3) {
+		cout << "File could not be opened." << endl;
+		return 3;
+	}
+	
+	mystuff.applyAction(intakeFile3);
+	intakeFile3.close();
+
 	mystuff.print();
 
 	

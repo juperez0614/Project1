@@ -20,15 +20,22 @@ public:
 	virtual ~MovieObject();
 	virtual Object* create() const = 0;
 	virtual void setData(ifstream & intake) = 0;
+	virtual void setPartialData(ifstream & intake) = 0;
 	virtual bool operator<(const Object & rhs)const = 0;
 	virtual bool operator==(const Object & rhs)const = 0;
 	virtual void display()const = 0;
+	virtual bool equals(Object* target)const = 0;
+
+	virtual int getQuantity() const; 
+	virtual bool setQuantity(int change);
+	virtual void actionDisplay() const = 0;
 
 protected:
 	string title;
 	int year;
 	string director;
 	int quantity;
+
 
 };
 #endif

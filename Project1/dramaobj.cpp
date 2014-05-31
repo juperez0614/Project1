@@ -2,8 +2,6 @@
 
 DramaObj::DramaObj() : MovieObject(){}
 
-DramaObj::DramaObj(string dirName, string titleName) : MovieObject(titleName, 2000, dirName){}
-
 DramaObj::~DramaObj(){
 	title = "";
 	director = "";
@@ -66,4 +64,37 @@ void DramaObj::display()const{
 		<< title << "\t" << "\t" << director << "\t" << year
 		<< endl;
 }
+
+void DramaObj::actionDisplay() const{
+	cout << title << "  " << director << "  " << year << endl;
+}
+
+void DramaObj::setPartialData(ifstream & intake){
+
+	intake.get();	//skip empty space
+
+	getline(intake, director, ',');
+
+	intake.get(); //skip empty space
+
+	getline(intake, title, ',');
+
+	string s;
+
+	getline(intake, s, '\n');
+
+}
+
+
+bool DramaObj::equals(Object* target)const{
+	MovieObject* e = dynamic_cast<MovieObject*>(target);
+	DramaObj* p = dynamic_cast<DramaObj*>(e);
+	if (p->director == director && p->title == title){
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 

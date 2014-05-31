@@ -104,3 +104,28 @@ void ObjectContainer::print(const containerNode* toWrite){
 void ObjectContainer::setOverhead(string setTo){
 	heading = setTo;
 }
+
+
+
+Object* ObjectContainer::find(Object * target){
+	return find(root, target);
+}
+
+Object* ObjectContainer::find(containerNode* current, Object* target){
+	if (current == NULL){
+		return NULL;
+	}
+	while (current != NULL){
+		if (current->data->equals(target) == true){
+			delete target;			// mem management getting ready to return current to same place
+			return current->data;
+		}
+		else if (*current->data < *target){
+			current = current->right;
+		}
+		else {
+			current = current->left;
+		}
+	}
+	return NULL; // account for all possibilities
+}

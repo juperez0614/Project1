@@ -15,6 +15,7 @@ public:
 	~ObjectController();
 	bool insertIt(char ch, Object* toInsert);
 	void print();
+	Object* find(char objCode, Object* target);
 
 private:
 	ObjectContainer* objController [OBJCONTROLSIZE];

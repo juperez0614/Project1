@@ -12,7 +12,7 @@ public:
 	//ObjectContainer(const ObjectContainer& current);
 	virtual ~ObjectContainer();
 	virtual bool insert(Object* toInsert);
-	//virtual bool search(Object* toFind) = 0;
+	virtual Object* find(Object* target);
 	virtual bool isEmpty() const; 
 	virtual void print();
 	void setOverhead(string setTo);
@@ -30,5 +30,6 @@ protected:
 	containerNode* insertHelper(containerNode* current, containerNode* toInsert);
 	virtual void destructorHelper(containerNode* current);
 	virtual void print(const containerNode* toWrite);
+	Object* find(containerNode* toCheck, Object* target);
 };
 #endif

@@ -11,6 +11,8 @@ character of the line and send the command to the appropriate container.
 #include <fstream>
 #include "objectcontroller.h"
 #include "factorycontroller.h"
+#include "cacontroller.h"
+#include "commandaction.h"
 
 
 using namespace std;
@@ -23,13 +25,16 @@ public:
 	void print();
 	void printContainer(ObjectController &) const;
 	void populateData(ifstream & inputfile);
+	void applyAction(ifstream & inputfile);
 	//bool borrowDVD(ifstream input);
 	//bool returnDVD(string dvdName, string custFullName);
 
 protected:
 	Object* emptyObject;
+	CommandAction* emptyAction;
 	ObjectController containerArray;
 	FactoryController factoryControl;
+	CAController actionArray;
 };
 
 #endif

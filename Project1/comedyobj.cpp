@@ -2,7 +2,6 @@
 
 ComedyObj::ComedyObj() :MovieObject(){}
 
-ComedyObj::ComedyObj(string titleName, int yr) : MovieObject(titleName, yr, ""){}
 
 ComedyObj::~ComedyObj(){
 	title = "";
@@ -63,5 +62,36 @@ void ComedyObj::display()const{
 	cout << quantity << "\t" << 10 - quantity << "\t"
 		<< title << "\t" << "\t" << director << "\t" << year
 		<< endl;
+}
+
+void ComedyObj::actionDisplay() const{
+	cout << title << "  " << director << "  " << year << endl;
+}
+
+void ComedyObj::setPartialData(ifstream & intake){
+
+	intake.get();	//skip empty space
+
+	getline(intake, title, ',');
+
+
+	intake >> year;
+
+	string s;
+
+	getline(intake, s, '\n');
+
+}
+
+
+bool ComedyObj::equals(Object* target)const{
+	MovieObject* e = dynamic_cast<MovieObject*>(target);
+	ComedyObj* p = dynamic_cast<ComedyObj*>(e);
+	if (p->title == title && p->year == year){
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 

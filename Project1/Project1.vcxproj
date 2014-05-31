@@ -65,34 +65,44 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="borrow.h" />
+    <ClInclude Include="cacontroller.h" />
     <ClInclude Include="classicobj.h" />
     <ClInclude Include="comedyobj.h" />
+    <ClInclude Include="commandaction.h" />
     <ClInclude Include="customerobj.h" />
     <ClInclude Include="dramaobj.h" />
     <ClInclude Include="factory.h" />
     <ClInclude Include="factorycontroller.h" />
+    <ClInclude Include="history.h" />
     <ClInclude Include="manager.h" />
     <ClInclude Include="moviefactory.h" />
     <ClInclude Include="movieobject.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="objectcontainer.h" />
     <ClInclude Include="objectcontroller.h" />
+    <ClInclude Include="return.h" />
     <ClInclude Include="userfactory.h" />
     <ClInclude Include="userobject.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="borrow.cpp" />
+    <ClCompile Include="cacontroller.cpp" />
     <ClCompile Include="classicobj.cpp" />
     <ClCompile Include="comedyobj.cpp" />
+    <ClCompile Include="commandaction.cpp" />
     <ClCompile Include="customerobj.cpp" />
     <ClCompile Include="dramaobj.cpp" />
     <ClCompile Include="factory.cpp" />
     <ClCompile Include="factorycontroller.cpp" />
+    <ClCompile Include="history.cpp" />
     <ClCompile Include="manager.cpp" />
     <ClCompile Include="moviefactory.cpp" />
     <ClCompile Include="movieobject.cpp" />
     <ClCompile Include="object.cpp" />
     <ClCompile Include="objectcontainer.cpp" />
     <ClCompile Include="objectcontroller.cpp" />
+    <ClCompile Include="return.cpp" />
     <ClCompile Include="testmain.cpp" />
     <ClCompile Include="userfactory.cpp" />
     <ClCompile Include="userobject.cpp" />

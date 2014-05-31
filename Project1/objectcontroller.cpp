@@ -51,3 +51,9 @@ void ObjectController::print(){
 		}
 	}
 }
+
+
+Object* ObjectController::find(char objCode, Object* target) {
+	int subscript = hash(objCode);
+	return objController[subscript]->find(target);
+}

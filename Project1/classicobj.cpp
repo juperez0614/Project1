@@ -6,11 +6,6 @@ ClassicObj::ClassicObj():MovieObject(){
 	actorLast = "";
 }
 
-ClassicObj::ClassicObj(string actorName, string actorLastName, int mon, int yr):MovieObject("", yr, ""){
-	month = mon;
-	actorFirst = actorName;
-	actorLast = actorLastName;
-}
 
 ClassicObj::~ClassicObj(){
 	title = "";
@@ -97,3 +92,35 @@ void ClassicObj::display() const {
 		<< " " << actorLast << endl;
 }
 
+void ClassicObj::actionDisplay() const{
+	cout << title << "  " << director << "  " << year << "  " << month << "  " << actorFirst << " " << actorLast << endl;
+}
+
+void ClassicObj::setPartialData(ifstream & intake){
+
+	intake >> month;	//get month
+
+	intake >> year;		//get year
+
+	intake >> actorFirst;	//get actor first
+
+	intake >> actorLast;	//
+
+	string s;
+
+	getline(intake, s, '\n');
+
+}
+
+
+bool ClassicObj::equals(Object* target)const{
+	MovieObject* e = dynamic_cast<MovieObject*>(target);
+	ClassicObj* p = dynamic_cast<ClassicObj*>(e);
+	if (p->month == month && p->year == year && 
+		p->actorFirst == actorFirst && p->actorLast == actorLast){
+		return true;
+	}
+	else {
+		return false;
+	}
+}

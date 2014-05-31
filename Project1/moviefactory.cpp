@@ -8,8 +8,6 @@ MovieFactory::MovieFactory() :Factory(){
 	objFactory[2] = NULL;
 	objFactory[3] = new ComedyObj();
 	objFactory[4] = NULL;
-	objFactory[5] = NULL;
-	objFactory[6] = NULL;
 }
 
 MovieFactory::~MovieFactory(){

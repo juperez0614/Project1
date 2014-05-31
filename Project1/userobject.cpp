@@ -1,13 +1,13 @@
 #include "userobject.h"
 
 UserObject::UserObject() : Object(){
-	id = "";
+	id = 0;
 	firstName = "";
 	lastName = "";
 }
 
 UserObject::~UserObject(){
-	id = "";
+	id = 0;
 	firstName = "";
 	lastName = "";
 }
