@@ -57,6 +57,8 @@ int MovieObject::getQuantity() const{
 //---------------------------------------------------------------------------
 //setQuantity
 //sets quantity to new value
+//+ used for return
+//if borrowed negative number passed as argument
 bool MovieObject::setQuantity(int change){
 	quantity = quantity + change; 
 	return true;
