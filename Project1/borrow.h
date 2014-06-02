@@ -1,3 +1,17 @@
+//---------------------------------------------------------------------------
+// Borrow.h
+// Derive class for all command actions, performs borrow action
+// Authors: Julio Perez, Jeffrey Asmus
+//---------------------------------------------------------------------------
+// Borrow class:  
+//		includes  features:
+//   -- sets data
+//   -- performs borrow action
+//   -- displays action
+//
+// Assumptions:
+//   --movie, customer exist and has a quantity > 0
+//---------------------------------------------------------------------------
 #ifndef BORROW_H
 #define BORROW_H
 
