@@ -1,3 +1,14 @@
+//---------------------------------------------------------------------------
+// cacontoller.h
+// Derive class for all command actions, controls actions
+// Authors: Julio Perez, Jeffrey Asmus
+//---------------------------------------------------------------------------
+// Borrow class:  
+//		includes  features:
+//   -- selects action
+//   -- hashs it to apporiate location
+//
+//---------------------------------------------------------------------------
 #include "cacontroller.h"
 
 //---------------------------------------------------------------------------
