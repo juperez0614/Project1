@@ -1,3 +1,17 @@
+//---------------------------------------------------------------------------
+// MovieFactory.cpp
+// derived class for factorys, stores movie objects
+// Authors: Julio Perez, Jeffrey Asmus
+//---------------------------------------------------------------------------
+// MovieObject class:  
+//		includes  features:
+//   -- creates new genre types
+//   -- hash objects at apporiate location
+//
+// Assumptions:
+//   -- Genre types will be stored in the apporiate location
+//   -- invalid types are ignored
+//---------------------------------------------------------------------------
 #include "moviefactory.h"
 
 
