@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------
-// ComedyObj.H
+// ComedyObj.cpp
 // Derived class from movieobject, contains comedy types
 // Authors: Julio Perez, Jeffrey Asmus
 //---------------------------------------------------------------------------
@@ -15,9 +15,13 @@
 //---------------------------------------------------------------------------
 #include "comedyobj.h"
 
+//---------------------------------------------------------------------------
+//constructor
 ComedyObj::ComedyObj() :MovieObject(){}
 
-
+//---------------------------------------------------------------------------
+//destructor
+//sets attrubutes to empty or zero
 ComedyObj::~ComedyObj(){
 	title = "";
 	year = 0;
@@ -25,6 +29,10 @@ ComedyObj::~ComedyObj(){
 	quantity = 0;
 }
 
+//---------------------------------------------------------------------------
+//overloaded ==
+//determines if a two comedy movie objects are equal
+//using title, director, year as criteria
 bool ComedyObj::operator==(const Object & rhs)const{
 	const MovieObject& e = dynamic_cast<const MovieObject&>(rhs);
 	const ComedyObj& p = dynamic_cast< const ComedyObj& >(e);
@@ -36,6 +44,10 @@ bool ComedyObj::operator==(const Object & rhs)const{
 	}
 }
 
+//---------------------------------------------------------------------------
+//overloaded <
+//determines if a comedy movie objects is less than another
+//using title, director, year as criteria
 bool ComedyObj::operator<(const Object & rhs)const {
 	const MovieObject* e = dynamic_cast<const MovieObject*>(&rhs);
 	const ComedyObj* p = dynamic_cast< const ComedyObj* >(e); 
@@ -55,6 +67,9 @@ bool ComedyObj::operator<(const Object & rhs)const {
 	}
 }
 
+//---------------------------------------------------------------------------
+//create
+//creates a new comedy object
 Object* ComedyObj::create()const {
 	return new ComedyObj();
 }
@@ -73,16 +88,27 @@ void ComedyObj::setData(ifstream& intake){
 	getline(intake, s, '\n');                       // get eoln
 }
 
+//---------------------------------------------------------------------------
+//display
+//prints out inital quantity, new quantity, title, director, year to screen
 void ComedyObj::display()const{
 	cout << quantity << "\t" << 10 - quantity << "\t"
 		<< title << "\t" << "\t" << director << "\t" << year
 		<< endl;
 }
 
+//---------------------------------------------------------------------------
+//actionDisplay
+//prints out title, director, year, month to the screen 
+//after an action has been performed
 void ComedyObj::actionDisplay() const{
 	cout << title << "  " << director << "  " << year << endl;
 }
 
+//---------------------------------------------------------------------------
+//setPartialData
+//sets title, year 
+//used to find classic object when performing an action
 void ComedyObj::setPartialData(ifstream & intake){
 
 	intake.get();	//skip empty space
@@ -98,7 +124,9 @@ void ComedyObj::setPartialData(ifstream & intake){
 
 }
 
-
+//---------------------------------------------------------------------------
+//equals
+// i dont think we need this???
 bool ComedyObj::equals(Object* target)const{
 	MovieObject* e = dynamic_cast<MovieObject*>(target);
 	ComedyObj* p = dynamic_cast<ComedyObj*>(e);
