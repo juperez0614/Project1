@@ -1,6 +1,7 @@
 #include "movieobject.h"
 
 MovieObject::MovieObject():Object(){
+	format = 'D';
 	title = "";
 	year = 0;
 	director = "";

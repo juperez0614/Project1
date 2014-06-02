@@ -14,6 +14,7 @@ public:
 	virtual void display() const; 
 	virtual void setData(ifstream& intake);
 
+
 protected:
 
 

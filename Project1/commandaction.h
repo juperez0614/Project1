@@ -18,6 +18,8 @@ public:
 	virtual void customerSet(Object* toCreate);
 	virtual void movieSet(Object* toCreate);
 	virtual char getCode()const;
+	virtual bool checkComplete() const;
+	virtual char getFormat() const;
 
 protected:
 	int  id;

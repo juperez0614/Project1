@@ -13,6 +13,7 @@ public:
 	virtual CommandAction* createAction();
 	virtual void display() const; 
 	virtual void setData(ifstream& intake);
+	virtual bool checkComplete() const;
 
 protected:
 

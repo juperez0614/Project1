@@ -30,3 +30,12 @@ void History::display() const{
 void History::setData(ifstream&  intake){
 	intake >> actionCode >> id;
 }
+
+bool History::checkComplete()const{
+	if (customer != NULL){
+		return true;
+	}
+	else{
+		return false;
+	}
+}

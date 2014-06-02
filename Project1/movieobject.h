@@ -31,6 +31,7 @@ public:
 	virtual void actionDisplay() const = 0;
 
 protected:
+	char format;
 	string title;
 	int year;
 	string director;

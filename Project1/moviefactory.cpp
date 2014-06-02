@@ -21,6 +21,9 @@ MovieFactory::~MovieFactory(){
 
 Object* MovieFactory::createIt(char movieCode){
 	int subscript = hash(movieCode);
+	if (subscript != 0 && subscript != 1 && subscript != 3) {
+		return NULL;
+	}
 	return objFactory[subscript]->create();
 }
 

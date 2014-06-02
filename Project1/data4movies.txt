@@ -14,6 +14,7 @@ F Joel Coen, Fargo, 1996
 D Andrew Stanton, Wall-E, 2008
 D Clint Eastwood, Unforgiven, 1992
 C Hal Ashby, Harold and Maude, Ruth Gordon 3 1971
+Z Hal Ashby, Harold and Maude, Bud Cort 3 1971
 C George Cukor, Holiday, Katherine Hepburn 9 1938
 C George Cukor, Holiday, Cary Grant 9 1938
 C Victor Fleming, Gone With the Wind, Vivien Leigh 2 1939
@@ -21,6 +22,7 @@ C Victor Fleming, Gone With the Wind, Clark Gable 2 1939
 C George Cukor, The Philadelphia Story, Katherine Hepburn 5 1940
 C George Cukor, The Philadelphia Story, Cary Grant 5 1940
 C John Huston, The Maltese Falcon, Humphrey Bogart 10 1941
+Z Frank Capra, It's a Wonderful Life, James Steward 11 1946
 C Frank Capra, It's a Wonderful Life, James Steward 11 1946
 C Frank Capra, It's a Wonderful Life, Donna Reed 11 1946
 C Stanley Kubrick, A Clockwork Orange, Malcolm McDowell 2 1971

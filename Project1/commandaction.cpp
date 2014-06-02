@@ -55,3 +55,17 @@ void CommandAction::movieSet(Object* toAdd){
 char CommandAction::getCode() const{
 	return genre;
 }
+
+
+bool CommandAction::checkComplete()const{
+	if (movie != NULL && customer != NULL){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+char CommandAction::getFormat()const {
+	return format;
+}
