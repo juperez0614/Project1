@@ -1,3 +1,19 @@
+//---------------------------------------------------------------------------
+// MovieObject.H
+// Base class for all movie genre types, contains movie objects
+// Authors: Julio Perez, Jeffrey Asmus
+//---------------------------------------------------------------------------
+// MovieObject class:  
+//		includes  features:
+//   -- creates movie object
+//   -- gets quantity
+//   -- sets quantity 
+//   -- all other methods are overwritten in derived classes
+//
+// Assumptions:
+//   -- quantity defaults to a fixed size of 10 if quantity is not specified
+//   -- all other attributes default to empty chars, strings, or to 0
+//---------------------------------------------------------------------------
 #include "movieobject.h"
 
 MovieObject::MovieObject():Object(){
