@@ -1,22 +1,27 @@
 //---------------------------------------------------------------------------
-// DramaObj.H
+// DramaObj.cpp
 // Derived class from movieobject, contains drama types
 // Authors: Julio Perez, Jeffrey Asmus
 //---------------------------------------------------------------------------
 // DramaObj class:  
 //		includes  features:
-//   -- creates movie object
+//   -- creates drama object
 //   -- sets data in object
 //   -- allows for partial data to be set
-//   -- allows for comparsion of 2 classic objects
+//   -- allows for comparsion of 2 drama objects
 //   -- displays classic object contents
-//   -- displays actions performed on classic objects
+//   -- displays actions performed on drama objects
 //
 //---------------------------------------------------------------------------
 #include "dramaobj.h"
 
+//---------------------------------------------------------------------------
+//constructor
 DramaObj::DramaObj() : MovieObject(){}
 
+//---------------------------------------------------------------------------
+//destructor
+//sets attrubutes to empty or zero
 DramaObj::~DramaObj(){
 	title = "";
 	director = "";
@@ -24,6 +29,10 @@ DramaObj::~DramaObj(){
 	quantity = 0;
 }
 
+//---------------------------------------------------------------------------
+//overloaded ==
+//determines if a two drama movie objects are equal
+//using title, director, year as criteria
 bool DramaObj::operator==(const Object & rhs) const{
 	const MovieObject& e = dynamic_cast<const MovieObject&>(rhs);
 	const DramaObj& p = dynamic_cast<const DramaObj&>(e);
@@ -35,6 +44,10 @@ bool DramaObj::operator==(const Object & rhs) const{
 	}
 }
 
+//---------------------------------------------------------------------------
+//overloaded <
+//determines if a drama movie objects is less than another
+//using title, director, year as criteria
 bool DramaObj::operator<(const Object & rhs) const{
 	const MovieObject& e = dynamic_cast<const MovieObject&>(rhs);
 	const DramaObj& p = dynamic_cast<const DramaObj&>(e);
@@ -54,11 +67,17 @@ bool DramaObj::operator<(const Object & rhs) const{
 	}
 }
 
-
+//---------------------------------------------------------------------------
+//create
+//creates a new drama object
 Object* DramaObj::create()const {
 	return new DramaObj();
 }
 
+//---------------------------------------------------------------------------
+//setData
+//sets the director, title, and year attruibutes
+//from an input file
 void DramaObj::setData(ifstream& intake){
 	char code;
 	intake >> code;
@@ -73,17 +92,27 @@ void DramaObj::setData(ifstream& intake){
 	getline(intake, s, '\n'); // get eoln
 }
 
-
+//---------------------------------------------------------------------------
+//display
+//prints out inital quantity, new quantity, title, director, year to screen
 void DramaObj::display()const{
 	cout << quantity << "\t" << 10 - quantity << "\t"
 		<< title << "\t" << "\t" << director << "\t" << year
 		<< endl;
 }
 
+//---------------------------------------------------------------------------
+//actionDisplay
+//prints out title, director, year, month to the screen 
+//after an action has been performed
 void DramaObj::actionDisplay() const{
 	cout << title << "  " << director << "  " << year << endl;
 }
 
+//---------------------------------------------------------------------------
+//setPartialData
+//sets title, year 
+//used to find classic object when performing an action
 void DramaObj::setPartialData(ifstream & intake){
 
 	intake.get();	//skip empty space
@@ -100,7 +129,9 @@ void DramaObj::setPartialData(ifstream & intake){
 
 }
 
-
+//---------------------------------------------------------------------------
+//equals
+// i dont think we need this???
 bool DramaObj::equals(Object* target)const{
 	MovieObject* e = dynamic_cast<MovieObject*>(target);
 	DramaObj* p = dynamic_cast<DramaObj*>(e);
