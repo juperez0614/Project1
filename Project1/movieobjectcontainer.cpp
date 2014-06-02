@@ -1,3 +1,15 @@
+//---------------------------------------------------------------------------
+// MovieObjectContainer.cpp
+// Derive class for all object containers, contains movie objects
+// Authors: Julio Perez, Jeffrey Asmus
+//---------------------------------------------------------------------------
+// MovieObjectContainer class:  
+//		includes  features:
+//   -- find object
+//   -- determines if container is empty
+//
+//---------------------------------------------------------------------------
+
 #include "movieobjectcontainer.h"
 
 MovieObjectContainer::MovieObjectContainer() :ObjectContainer(){
