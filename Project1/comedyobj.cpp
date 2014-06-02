@@ -1,3 +1,18 @@
+//---------------------------------------------------------------------------
+// ComedyObj.H
+// Derived class from movieobject, contains comedy types
+// Authors: Julio Perez, Jeffrey Asmus
+//---------------------------------------------------------------------------
+// ComedyObj class:  
+//		includes  features:
+//   -- creates comedy object
+//   -- sets data in object
+//   -- allows for partial data to be set
+//   -- allows for comparsion of 2 classic objects
+//   -- displays classic object contents
+//   -- displays actions performed on classic objects
+//
+//---------------------------------------------------------------------------
 #include "comedyobj.h"
 
 ComedyObj::ComedyObj() :MovieObject(){}
