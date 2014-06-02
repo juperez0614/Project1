@@ -74,6 +74,10 @@ Object* ComedyObj::create()const {
 	return new ComedyObj();
 }
 
+//---------------------------------------------------------------------------
+//setData
+//sets the director, title, and year attruibutes
+//from an input file
 void ComedyObj::setData(ifstream& intake){
 	char code;
 	intake >> code;
