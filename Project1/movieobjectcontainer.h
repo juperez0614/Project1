@@ -1,7 +1,14 @@
-/*
-This is a binary search tree that contains all the movies in a particular
-genre. Each tree is sorted by the MovieObject's definition of < and ==.
-*/
+//---------------------------------------------------------------------------
+// MovieObjectContainer.cpp
+// Derive class for all object containers, contains movie objects
+// Authors: Julio Perez, Jeffrey Asmus
+//---------------------------------------------------------------------------
+// MovieObjectContainer class:  
+//		includes  features:
+//   -- find object
+//   -- determines if container is empty
+//
+//---------------------------------------------------------------------------
 #ifndef MOVIEOBJECTCONTAINER_H
 #define MOVIEOBJECTCONTAINER_H
 #include "objectcontainer.h"
