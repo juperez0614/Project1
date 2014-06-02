@@ -1,11 +1,13 @@
 #include "cacontroller.h"
 
+//---------------------------------------------------------------------------
 CAController::CAController(){
 	actionArray[0] = new Borrow();
 	actionArray[1] = new Return();
 	actionArray[2] = new History();
 }
 
+//---------------------------------------------------------------------------
 CAController::~CAController(){
 	for (int i = 0; i < CASIZE; i++){
 		if (actionArray[i] != NULL){
@@ -15,6 +17,7 @@ CAController::~CAController(){
 	}
 }
 
+//---------------------------------------------------------------------------
 int CAController::hash(char code){
 	if (code == 'B'){
 		return 0;
@@ -31,6 +34,7 @@ int CAController::hash(char code){
 //use to mitigate bad input give outside limits value
 }
 
+//---------------------------------------------------------------------------
 CommandAction* CAController::selectAction(char code){
 	int subscript = hash(code);
 	//if (subscript < 0 || subscript > 2){
