@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------
-// MovieObject.H
+// MovieObject.cpp
 // Base class for all movie genre types, contains movie objects
 // Authors: Julio Perez, Jeffrey Asmus
 //---------------------------------------------------------------------------
