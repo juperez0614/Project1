@@ -1,3 +1,20 @@
+//---------------------------------------------------------------------------
+// ClassicObj.H
+// Derived class from movieobject, contains classic types
+// Authors: Julio Perez, Jeffrey Asmus
+//---------------------------------------------------------------------------
+// ClassicObj class:  
+//		includes  features:
+//   -- creates movie object
+//   -- sets data in object
+//   -- allows for partial data to be set
+//   -- allows for comparsion of 2 classic objects
+//   -- displays classic object contents
+//   -- displays actions performed on classic objects
+//
+// Assumptions:
+//   -- all attributes default to empty strings, or to 0
+//---------------------------------------------------------------------------
 #include "classicobj.h"
 
 ClassicObj::ClassicObj():MovieObject(){
