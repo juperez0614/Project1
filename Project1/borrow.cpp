@@ -1,8 +1,25 @@
+//---------------------------------------------------------------------------
+// Borrow.cpp
+// Derive class for all command actions, performs borrow action
+// Authors: Julio Perez, Jeffrey Asmus
+//---------------------------------------------------------------------------
+// Borrow class:  
+//		includes  features:
+//   -- sets data
+//   -- creates borrow object
+//   -- performs borrow action
+//   -- displays action
+//
+// Assumptions:
+//   --movie, customer exist and has a quantity > 0
+//---------------------------------------------------------------------------
 #include "borrow.h"
 
+//---------------------------------------------------------------------------
 Borrow::Borrow() : CommandAction(){
 }
 
+//---------------------------------------------------------------------------
 Borrow::~Borrow(){
 	id = 0;
 	format = '\0';
@@ -13,20 +30,24 @@ Borrow::~Borrow(){
 	customer = NULL;
 }
 
+//---------------------------------------------------------------------------
 void Borrow::performAct(){
 	decreaseQuantity();
 	customer->addToHistory(this);
 }
 
+//---------------------------------------------------------------------------
 CommandAction* Borrow::createAction() {
 	return new Borrow(); 
 }
 
+//---------------------------------------------------------------------------
 void Borrow::display() const {
 	cout << "DVD  Borrow  ";
 	movie->actionDisplay();
 }
 
+//---------------------------------------------------------------------------
 void Borrow::setData(ifstream&  intake){
 	intake >> format >> genre;
 
