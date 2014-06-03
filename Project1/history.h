@@ -1,3 +1,18 @@
+//---------------------------------------------------------------------------
+// history.h
+// Derive class for all command actions, performs history action
+// Authors: Julio Perez, Jeffrey Asmus
+//---------------------------------------------------------------------------
+// history class:  
+//		includes  features:
+//   -- sets data
+//   -- performs history action
+//   -- displays action
+//   --checks if complete
+//
+// Assumptions:
+//   --movie, customer exist 
+//---------------------------------------------------------------------------
 #ifndef HISTORY_H
 #define HISTORY_H
 
