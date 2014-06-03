@@ -12,6 +12,8 @@
 #include "cacontroller.h"
 
 //---------------------------------------------------------------------------
+//constructor
+//creates actions at location in action array
 CAController::CAController(){
 	actionArray[0] = new Borrow();
 	actionArray[1] = new Return();
@@ -19,6 +21,8 @@ CAController::CAController(){
 }
 
 //---------------------------------------------------------------------------
+//destructor
+//deallocates memory from actionarray
 CAController::~CAController(){
 	for (int i = 0; i < CASIZE; i++){
 		if (actionArray[i] != NULL){
@@ -29,6 +33,8 @@ CAController::~CAController(){
 }
 
 //---------------------------------------------------------------------------
+//hash
+//determines where to put action in actionarray
 int CAController::hash(char code){
 	if (code == 'B'){
 		return 0;
@@ -40,12 +46,14 @@ int CAController::hash(char code){
 		return 2;
 	}
 	else {
-		return -1;
+		return -1; //mitigates bad input give outside limits value
 	}
-//use to mitigate bad input give outside limits value
+
 }
 
 //---------------------------------------------------------------------------
+//selectAction
+//creations action to store at index supscript
 CommandAction* CAController::selectAction(char code){
 	int subscript = hash(code);
 	//if (subscript < 0 || subscript > 2){
