@@ -16,10 +16,14 @@
 #include "borrow.h"
 
 //---------------------------------------------------------------------------
+//constructor
+//initalizes command action
 Borrow::Borrow() : CommandAction(){
 }
 
 //---------------------------------------------------------------------------
+//destructor
+//sets all attributes to 0, empty, or null
 Borrow::~Borrow(){
 	id = 0;
 	format = '\0';
@@ -31,23 +35,30 @@ Borrow::~Borrow(){
 }
 
 //---------------------------------------------------------------------------
+//performAct
+//performs borrow; decreases quantity and adds it to customer's history 
 void Borrow::performAct(){
 	decreaseQuantity();
 	customer->addToHistory(this);
 }
 
 //---------------------------------------------------------------------------
+//createAction
+//creates new borrow object
 CommandAction* Borrow::createAction() {
 	return new Borrow(); 
 }
 
 //---------------------------------------------------------------------------
+//displays borrow action to screen
 void Borrow::display() const {
 	cout << "DVD  Borrow  ";
 	movie->actionDisplay();
 }
 
 //---------------------------------------------------------------------------
+//setData
+//sets format and genre from an input file
 void Borrow::setData(ifstream&  intake){
 	intake >> format >> genre;
 
