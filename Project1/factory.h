@@ -1,3 +1,13 @@
+//---------------------------------------------------------------------------
+// Factory.h
+// stores customers, movies, and actions
+// Authors: Julio Perez, Jeffrey Asmus
+//---------------------------------------------------------------------------
+// factory class:  
+//		includes  features:
+//   -- creates objects
+//
+//---------------------------------------------------------------------------
 #ifndef FACTORY_H
 #define FACTORY_H
 
