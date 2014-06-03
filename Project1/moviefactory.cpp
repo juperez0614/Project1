@@ -15,7 +15,9 @@
 #include "moviefactory.h"
 
 
-
+//---------------------------------------------------------------------------
+//constructor
+//creates new movie obj containers at apporiate indexes
 MovieFactory::MovieFactory() :Factory(){
 	objFactory[0] = new ClassicObj(); 
 	objFactory[1] = new DramaObj();
@@ -24,6 +26,9 @@ MovieFactory::MovieFactory() :Factory(){
 	objFactory[4] = NULL;
 }
 
+//---------------------------------------------------------------------------
+//destructor
+//deallocates memory created from objFactory
 MovieFactory::~MovieFactory(){
 	for (int i = 0; i < SIZE; i++){
 		if (objFactory[i] != NULL){
@@ -33,6 +38,9 @@ MovieFactory::~MovieFactory(){
 	}
 }
 
+//---------------------------------------------------------------------------
+//createit
+//creates a new movie object and stores it at correct index
 Object* MovieFactory::createIt(char movieCode){
 	int subscript = hash(movieCode);
 	if (subscript != 0 && subscript != 1 && subscript != 3) {
@@ -41,6 +49,9 @@ Object* MovieFactory::createIt(char movieCode){
 	return objFactory[subscript]->create();
 }
 
+//---------------------------------------------------------------------------
+//hash
+//uses moviecode to determine where to store object in objFactory
 int MovieFactory::hash(char movieCode){
 	return movieCode - 'C';
 }
